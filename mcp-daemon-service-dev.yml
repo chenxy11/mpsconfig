@@ -5,8 +5,8 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123456
-    url: jdbc:mysql://127.0.0.1:3306/pig
+    url: jdbc:mysql://127.0.0.1:3306/mcp
   elasticjob:
     zookeeper:
       server-lists: 127.0.0.1:2181
-      namespace: pig-daemon
+      namespace: mcp-daemon

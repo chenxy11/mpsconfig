@@ -18,10 +18,10 @@ spring:
     suffix: .ftl
     template-loader-path: classpath:/templates/
       
-pig:
+mcp:
   auth:
-    clientId: pig
-    clientSecret: pig
+    clientId: mcp
+    clientSecret: mcp
     scope: server
   social:
     qq:

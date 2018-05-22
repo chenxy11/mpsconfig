@@ -13,29 +13,29 @@ zuul:
   ribbon:
     eager-load:
       enabled: true
-      clients: pig-auth,pig-upms-service
+      clients: mcp-auth,mcp-upms-service
   ignoredServices: '*'
   host:
     connect-timeout-millis: 30000
     socket-timeout-millis: 30000
   routes:
-    pig-auth:
+    mcp-auth:
       path: /auth/**
-      serviceId: pig-auth
+      serviceId: mcp-auth
       stripPrefix: true
       sensitiveHeaders:
-    pig-upms-service:
+    mcp-upms-service:
       path: /admin/**
-      serviceId: pig-upms-service
+      serviceId: mcp-upms-service
       stripPrefix: true
       sensitiveHeaders:
   ratelimit:
-    key-prefix: pig-ratelimite
+    key-prefix: mcp-ratelimite
     enabled: true
     repository: REDIS
     behind-proxy: true
     policies:
-      pig-upms-service:
+      mcp-upms-service:
         limit: 100
         quota: 100
         refresh-interval: 3
@@ -47,12 +47,12 @@ security:
   sessions: stateless
   oauth2:
     client:
-      client-id: pig
-      client-secret: pig
+      client-id: mcp
+      client-secret: mcp
     resource:
       loadBalanced: true
       token-info-uri: ${security.auth.server}/oauth/check-token
-      service-id: pig-gateway
+      service-id: mcp-gateway
       jwt:
          key-uri: ${security.auth.server}/oauth/token_key #解析jwt令牌所需要密钥的地址
 
