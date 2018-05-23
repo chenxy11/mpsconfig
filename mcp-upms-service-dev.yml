@@ -13,50 +13,50 @@ spring:
   sleuth:
     sampler:
       percentage: 1.0
-
-  datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-#    schema: classpath:/db/schema-h2.sql
-#    data: classpath:/db/data-h2.sql
-    url: jdbc:mysql://127.0.0.1:3306/pig
-    username: root
-    password: 123456
-#    platform: h2
-#    initialize: true
-    continue-on-error: true
-  mysql:
-    console:
-      enabled: true
-      path: /console
+#
+#  datasource:
+#    type: com.zaxxer.hikari.HikariDataSource
+##    schema: classpath:/db/schema-h2.sql
+##    data: classpath:/db/data-h2.sql
+#    url: jdbc:mysql://127.0.0.1:3306/pig
+#    username: root
+#    password: 123456
+##    platform: h2
+##    initialize: true
+#    continue-on-error: true
+#  mysql:
+#    console:
+#      enabled: true
+#      path: /console
 
 
 # 分库分表支持
-#sharding:
-#  jdbc:
-#    defaultDataSourceName:
-#      type: com.zaxxer.hikari.HikariDataSource
-#      driver-class-name: com.mysql.jdbc.Driver
-#      username: root
-#      password: 123456
-#      jdbc-url: jdbc:mysql://127.0.0.1:3306/pig
-#    datasource:
-#      names: ds
-#      ds:
-#        type: com.zaxxer.hikari.HikariDataSource
-#        driver-class-name: com.mysql.jdbc.Driver
-#        username: root
-#        password: 123456
-#        jdbc-url: jdbc:mysql://127.0.0.1:3306/pig?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
-#    config:
-#      sharding:
-#        tables:
-#          sys_log:
-#            actual-data-nodes: ds.sys_log_${0..1}
-#            table-strategy:
-#              inline:
-#                sharding-column: id
-#                algorithm-expression: sys_log_${id % 2}
-#            key-generator-column-name: id
+sharding:
+  jdbc:
+    defaultDataSourceName:
+      type: com.zaxxer.hikari.HikariDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: 123456
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/pig
+    datasource:
+      names: ds
+      ds:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        username: root
+        password: 123456
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/pig?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    config:
+      sharding:
+        tables:
+          sys_log:
+            actual-data-nodes: ds.sys_log_${0..1}
+            table-strategy:
+              inline:
+                sharding-column: id
+                algorithm-expression: sys_log_${id % 2}
+            key-generator-column-name: id
 
 #mybaits-plus配置，修改主键类型，mapper.xml、type 别名等
 mybatis-plus:
