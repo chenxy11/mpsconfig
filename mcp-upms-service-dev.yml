@@ -7,9 +7,9 @@ redis:
 
 # sleuth配置
 spring:
-  zipkin:
-    rabbitmq:
-      queue: zipkin
+#  zipkin:
+#    rabbitmq:
+#      queue: zipkin
   sleuth:
     sampler:
       percentage: 0.2

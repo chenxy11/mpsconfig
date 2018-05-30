@@ -14,11 +14,11 @@ spring:
     host: 127.0.0.1
     port: 6381
     password:
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5682
-    username: mcp
-    password: lengleng
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5682
+#    username: mcp
+#    password: lengleng
   http:
     multipart:
       max-file-size: 1000MB
