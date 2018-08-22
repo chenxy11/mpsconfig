@@ -1,0 +1,9 @@
+#指明监控的服务
+turbine:
+    appconfig: node1,node2
+    aggregator:
+          clusterConfig: default
+    clusterNameExpression: new String("default")
+feign:
+    hystrix:
+        enabled: true
