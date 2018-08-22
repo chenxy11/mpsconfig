@@ -6,16 +6,16 @@ zuul:
       path: /auth/**
       serviceId: mcp-auth
 
-urls:
-  anon:
-    - /mobile/**
-    - /auth/**
-    - /admin/code/*
-    - /admin/smsCode/*
-    - /admin/user/info
-    - /admin/menu/userTree
-    - /swagger-resources/**
-    - /swagger-ui.html
-    - /*/v2/api-docs
-    - /swagger/api-docs
-    - /webjars/**
+#urls:
+#  anon:
+#    - /mobile/**
+#    - /auth/**
+#    - /admin/code/*
+#    - /admin/smsCode/*
+#    - /admin/user/info
+#    - /admin/menu/userTree
+#    - /swagger-resources/**
+#    - /swagger-ui.html
+#    - /*/v2/api-docs
+#    - /swagger/api-docs
+#    - /webjars/**
