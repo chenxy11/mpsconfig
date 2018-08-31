@@ -1,56 +1,9 @@
-#server:
-#  port: 8001
-#spring:
-#  application:
-#    name: mcp-bus
-#  profiles:
-#    active: dev
-#  cloud:
-#    config:
-#      fail-fast: false
-#      discovery:
-#        service-id: mcp-config-server
-#        enabled: true
-#      profile: ${spring.profiles.active}
-#      label: master
-#---
-spring:
-  profiles: dev
-eureka:
-  instance:
-    prefer-ip-address: true
-    lease-renewal-interval-in-seconds: 5
-    lease-expiration-duration-in-seconds: 20
-  client:
-    serviceUrl:
-      defaultZone: http://mcp:mcp@localhost:1025/eureka
-    registry-fetch-interval-seconds: 10
-##认证服务器地址
-#security:
-#  auth:
-#    server: http://localhost:3000
----
-spring:
-  profiles: prd
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    serviceUrl:
-      defaultZone: http://mcp:mcp@eureka:1025/eureka
-
-#建议使用ng负载均衡
-security:
-  auth:
-    server: http://localhost:3000
----
 spring:
   rabbitmq:
     host: 172.16.17.130
-    port: 15672
+    port: 5672
     username: guest
     password: guest
-
 #需要关闭，不然刷新消息总线时会报401
 management:
   security:
