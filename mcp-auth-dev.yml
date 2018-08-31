@@ -5,16 +5,17 @@
 # datasoure默认使用JDBC
 
 spring:
-  database:
+  datasource:
     url: jdbc:mysql://localhost:3306/ioc_iot
     username: root
     password: 123456
 
 spring:
-    data:
-      url: jdbc:mysql://localhost:3306/jims-his
-      username: root
-      password: 123456
+    datasource:
+      data:
+        url: jdbc:mysql://localhost:3306/jims-his
+        username: root
+        password: 123456
    zipkin:
       base-url: http://localhost:7001
     sleuth:
