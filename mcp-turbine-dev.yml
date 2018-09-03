@@ -6,6 +6,7 @@ turbine:
     clusterNameExpression: new String("default")
     instanceUrlSuffix: 6001/hystrix.stream
 ---
+
 zuul:
   ribbonIsolationStrategy: THREAD #设置Hystrix隔离策略为线程池
   threadPool:
