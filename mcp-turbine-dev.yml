@@ -1,10 +1,15 @@
 #指明监控的服务
 turbine:
-    appconfig: mcp-auth
+    appconfig: mcp-auth,mcp-gateway
     aggregator:
           clusterConfig: default
     clusterNameExpression: new String("default")
     instanceUrlSuffix: 6001/hystrix.stream
+---
+zuul:
+  ribbonIsolationStrategy: THREAD #设置Hystrix隔离策略为线程池
+  threadPool:
+    useSeparateThreadPools: true #每个路由使用独立的线程池
 feign:
     hystrix:
         enabled: true
