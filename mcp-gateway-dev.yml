@@ -1,5 +1,0 @@
- zuul:
-  routes:
-    mcp-auth:
-      path: /auth/**
-      serviceId: mcp-auth
